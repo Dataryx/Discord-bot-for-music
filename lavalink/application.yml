@@ -1,0 +1,53 @@
+server:
+  port: 2333
+
+lavalink:
+  server:
+    password: "youshallnotpass"
+
+    # Disable the old, built-in YouTube resolver (deprecated) —
+    # we'll use the YouTube plugin instead.
+    sources:
+      youtube: false
+      bandcamp: false
+      soundcloud: false
+      http: true
+      local: false
+
+    bufferDurationMs: 400
+    frameBufferDurationMs: 5000
+    opusEncodingQuality: 10
+    resamplingQuality: LOW
+    trackStuckThresholdMs: 10000
+    useSeekGhosting: true
+    youtubeSearchEnabled: true
+    playerUpdateInterval: 1
+
+metrics:
+  prometheus:
+    enabled: true
+    endpoint: /metrics
+
+# --- Plugins ---
+plugins:
+  # YouTube Source plugin (required for yt/ytm search like "!play sunflower postmalone")
+  youtube:
+    enabled: true
+
+  # Optional: LavaSrc to accept Spotify/Apple links and mirror to playable sources
+  lavasrc:
+    providers:
+      - "youtube"
+      - "ytsearch"
+      - "ytmsearch"
+      - "spotify"
+      - "applemusic"
+    spotify:
+      enabled: true
+      clientId: "${SPOTIFY_CLIENT_ID:-}"
+      clientSecret: "${SPOTIFY_CLIENT_SECRET:-}"
+      countryCode: "US"
+    applemusic:
+      enabled: true
+      mediaToken: "${APPLE_MUSIC_MEDIA_TOKEN:-}"
+      countryCode: "US"
