@@ -4,7 +4,7 @@ A ready-to-run Discord music bot using **discord.py + Wavelink + Lavalink v4**.
 
 ## Features
 - `!join`, `!play`, `!pause`, `!resume`, `!skip`, `!stop`, `!np`, `!queue`, `!vol`, `!seek`, `!loop`, `!leave`
-- Works with **YouTube/YouTube Music** searches (`!play sunflower postmalone`)
+- Works with **YouTube/YouTube Music** searches (`!play youtube link`)
 - Accepts **Spotify/Apple** links if you add the **LavaSrc** plugin
 
 ## Prereqs
@@ -54,5 +54,3 @@ python bot.py
 - **`LavalinkLoadException` on search**: ensure the **YouTube plugin JAR** is present and `sources.youtube: false` in `application.yml`.
 - **Attribute mismatches**: this bot targets Wavelink 3.x (`wavelink>=3.3,<4.0`).
 
-## License
-MIT
