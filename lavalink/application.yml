@@ -5,8 +5,7 @@ lavalink:
   server:
     password: "youshallnotpass"
 
-    # Disable the old, built-in YouTube resolver (deprecated) —
-    # we'll use the YouTube plugin instead.
+    # Disable the built-in YouTube resolver (deprecated); we'll use the YouTube plugin instead.
     sources:
       youtube: false
       bandcamp: false
@@ -28,13 +27,9 @@ metrics:
     enabled: true
     endpoint: /metrics
 
-# --- Plugins ---
 plugins:
-  # YouTube Source plugin (required for yt/ytm search like "!play sunflower postmalone")
   youtube:
     enabled: true
-
-  # Optional: LavaSrc to accept Spotify/Apple links and mirror to playable sources
   lavasrc:
     providers:
       - "youtube"
